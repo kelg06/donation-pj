@@ -10,8 +10,11 @@ urlpatterns = [
     path("thankyou/", thank_you, name="thank_you"),
     path('admin/', admin.site.urls),
     path('pay/',index, name='pay'),
-    path('charge/', charge, name='charge'),
-    path('success/<str:args>/', successMsg, name="message")
+    path('pay/canceled.html', canceled, name='canceled'),
+     path('pay/success.html', successMsg, name="message"),
+    path('create-checkout-session', CreateCheckoutSessionView.as_view(), name='create_checkout_session'),
+    path("success/", SuccessView.as_view()),
+    path("cancel/", CancelView.as_view()),
 ]
 
 
